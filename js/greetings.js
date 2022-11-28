@@ -1,5 +1,5 @@
-const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
+const loginForm = document.querySelector("#login__form");
+const loginInput = document.querySelector("#login__form input");
 //const loginButton = document.querySelector("#login-form button");
 const greeting = document.querySelector("#greeting");
 
@@ -11,7 +11,6 @@ const HIDDEN_CLASSNAME = "hidden";
 // 변수로 설정하면 변수가 잘못 입력되면 에러로 알 수 있다.
 // 문자는 에러로 안 뜨니 좋지 않다.
 const USERNAME_KEY = "username";
-const link = document.querySelector("a");
 
 /* 이미 브라우저에서 제공하는 기능이라 HTML에서 가능하다.
 function onLoginBtnClick() {
