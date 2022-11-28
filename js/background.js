@@ -13,8 +13,10 @@ const images = [
 
 const chosenImage = images[Math.floor(Math.random() * images.length)];
 
-const bgImage = document.createElement("img");
+// 바디에 배경이미지 바로 추가
+document.body.style.backgroundImage = `url(img/${chosenImage})`;
 
-bgImage.src = `img/${chosenImage}`;
-
-document.body.appendChild(bgImage);
+// 이미지 태그 만들어서 배경이미지 추가
+//const bgImage = document.createElement("img");
+//bgImage.src = `img/${chosenImage}`;
+//document.body.appendChild(bgImage);

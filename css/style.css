@@ -1,7 +1,101 @@
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  font-family: "NanumSquareRoundBold";
+  box-sizing: border-box;
+}
+
 body {
-  background-color: beige;
+  height: 100vh;
+  margin: 0;
+  background: no-repeat center;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .hidden {
   display: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+#wrap {
+  display: flex;
+  width: 50%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+#info__container {
+  text-align: center;
+  font-family: "NanumSquareRoundBold";
+  font-weight: 700;
+}
+
+#info__container #weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#info__container #weather .weather .text {
+  display: none;
+}
+
+#info__container #weather .weather .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+}
+
+#info__container #weather .weather .icon img {
+  width: 100%;
+}
+#todo__container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#todo__list {
+  position: relative;
+  width: 100%;
+  color: aqua;
+  overflow: auto;
+}
+
+.todo__delete-btn {
+  margin-left: 15px;
 }
