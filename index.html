@@ -13,52 +13,47 @@
   </head>
   <body>
     <div id="wrap">
-      <section id="wrap__left">
-        <div id="info__container">
-          <h2 id="clock">00:00:00</h2>
-          <div id="weather">
-            <span class="city"></span>
-            <span class="weather">
-              <span class="icon"></span>
-              <span class="icon"></span>
-            </span>
-            <span class="temp"></span>
-          </div>
+      <div id="info__container">
+        <h1 id="clock">00:00</h1>
+        <div id="weather">
+          <span class="city"></span>
+          <span class="weather">
+            <span class="icon"></span>
+            <span class="icon"></span>
+          </span>
+          <span class="temp"></span>
         </div>
-        <div id="greeting__container">
-          <form id="login__form" class="hidden">
-            <input
-              required
-              maxlength="15"
-              type="text"
-              placeholder="what is your name?"
-            />
-            <button>Log In</button>
-          </form>
-          <h1 id="greeting" class="hidden"></h1>
+      </div>
+      <div id="greeting__container">
+        <form id="login__form" class="hidden">
+          <input
+            required
+            maxlength="15"
+            type="text"
+            placeholder="what is your name?"
+          />
+          <button>Log In</button>
+        </form>
+        <h1 id="greeting" class="hidden"></h1>
+      </div>
+      <div id="todo__form__container">
+        <form id="todo__form">
+          <input
+            required
+            type="text"
+            placeholder="Write a To Do and Press Enter"
+          />
+        </form>
+      </div>
+      <div id="quote__container">
+        <div id="quote">
+          <span></span>
+          <span></span>
         </div>
-        <div id="todo__form__container">
-          <form id="todo__form">
-            <input
-              required
-              type="text"
-              placeholder="Write a To Do and Press Enter"
-            />
-          </form>
-        </div>
-        <div id="quote__container">
-          <div id="quote">
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </section>
-
-      <section id="wrap__right">
-        <div id="todo__container">
-          <ul id="todo__list"></ul>
-        </div>
-      </section>
+      </div>
+      <div id="todo__container">
+        <ul id="todo__list"></ul>
+      </div>
     </div>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
