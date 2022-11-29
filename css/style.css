@@ -16,11 +16,11 @@
   --color-black: #000000;
 
   /* Font size */
-  --font-large: 100px;
-  --font-medium: 28px;
-  --font-regular: 18px;
-  --font-small: 16px;
-  --font-micro: 14px;
+  --font-large: 144px;
+  --font-medium: 64px;
+  --font-regular: 32px;
+  --font-small: 20px;
+  --font-micro: 16px;
 
   /* Font weight */
   --weight-bold: 700;
@@ -92,14 +92,28 @@ h1 {
 h2 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
-  color: var(--color-black);
+  color: var(--color-white);
   margin: 8px 0;
 }
 
 h3 {
   font-size: var(--font-regular);
   font-weight: var(--font-regular);
-  color: var(--color-black);
+  color: var(--color-white);
+  margin: 8px 0;
+}
+
+h4 {
+  font-size: var(--font-small);
+  font-weight: var(--font-regular);
+  color: var(--color-white);
+  margin: 8px 0;
+}
+
+h5 {
+  font-size: var(--font-micro);
+  font-weight: var(--font-regular);
+  color: var(--color-white);
   margin: 8px 0;
 }
 
@@ -115,34 +129,41 @@ p {
   height: 100vh;
 }
 
+#weather__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+#weather__container h3 {
+  color: var(--color-white);
+}
+
+#weather__info {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+#weather__icon {
+  width: 40px;
+  height: 40px;
+}
+
+#weather__city {
+  text-align: end;
+  margin: 0px;
+}
+
 #info__container {
-  margin-top: 200px;
-  background-color: red;
+  margin-top: 100px;
   text-align: center;
   align-content: center;
   font-family: "NanumSquareRoundBold";
   font-weight: 700;
-}
-
-#info__container #weather {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#info__container #weather .weather .text {
-  display: none;
-}
-
-#info__container #weather .weather .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-}
-
-#info__container #weather .weather .icon img {
-  width: 100%;
 }
 
 #greeting__container #login__form {

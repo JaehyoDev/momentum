@@ -6,15 +6,26 @@ const API_KEY = "5a1d8bffe278cada59f9fdd5a384d65a";
 function onGeoOk(position) {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
-  console.log("You live in", lat, lon);
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const weather = document.querySelector("#weather span:first-child");
-      const city = document.querySelector("#weather span:last-child");
-      weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
-      city.innerText = data.name;
+      const cityName = data.name;
+      const weatherIcon = data.weather[0].icon;
+      const weatherTemp = data.main.temp;
+
+      console.log(cityName);
+      const city = document.querySelector("#weather__city");
+      const icon = document.querySelector("#weather__icon");
+      const temp = document.querySelector("#weather__temp");
+      icon.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+
+      console.log(city);
+      city.innerText = cityName;
+      //icon.innerText = weatherIcon;
+      temp.innerText = `${weatherTemp}°C`;
+
+      //weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
     });
 }
 
