@@ -1,3 +1,4 @@
+const loginMessage = document.querySelector("#greeting__container h2");
 const loginForm = document.querySelector("#login__form");
 const loginInput = document.querySelector("#login__form input");
 //const loginButton = document.querySelector("#login-form button");
@@ -46,7 +47,8 @@ function handleLinkClick(event) {
 }
 */
 function paintGreetings(username) {
-  greeting.innerText = `Hello ${username}`;
+  loginMessage.classList.add(HIDDEN_CLASSNAME);
+  greeting.innerText = `Hello, ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 

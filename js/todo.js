@@ -1,3 +1,5 @@
+const todoContainer = document.getElementById("todo__container");
+const todoBtn = document.getElementById("todo__Btn");
 const todoForm = document.getElementById("todo__form");
 const todoInput = document.querySelector("#todo__form input");
 const todoList = document.getElementById("todo__list");
@@ -61,3 +63,7 @@ if (savedTodos !== null) {
   todos.forEach(paintTodo);
   //todos.forEach((item) => paintTodo(item));
 }
+
+todoBtn.addEventListener("click", () =>
+  todoContainer.classList.toggle(HIDDEN_CLASSNAME)
+);

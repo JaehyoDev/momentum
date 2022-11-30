@@ -1,6 +1,7 @@
 /* Global */
 :root {
   /* Color */
+  color: white;
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
@@ -16,8 +17,8 @@
   --color-black: #000000;
 
   /* Font size */
-  --font-large: 144px;
-  --font-medium: 48px;
+  --font-large: 169px;
+  --font-medium: 60px;
   --font-regular: 32px;
   --font-small: 20px;
   --font-micro: 16px;
@@ -28,7 +29,7 @@
   --weight-regular: 400;
 
   /* Size */
-  --size-border-radius: 4px;
+  --size-border-radius: 8px;
 
   /* Annimation */
   --animation-duration: 300ms;
@@ -93,7 +94,6 @@ h2 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: var(--color-white);
-  margin: 8px 0;
 }
 
 h3 {
@@ -218,16 +218,41 @@ p {
   padding: 20px;
 }
 
+#todo__Btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: var(--color-white);
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+}
+
 #todo__container {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  background-color: var(--color-white);
+  border-radius: var(--size-border-radius);
+  bottom: 40px;
+  right: 20px;
+  width: 300px;
+  margin-bottom: 10px;
+  height: auto;
 }
 #todo__list {
   position: relative;
   width: 100%;
-  padding-bottom: 15px;
-  color: purple;
+  padding: 10px;
   overflow: auto;
+}
+
+/*밑 코드를 넣으니 좌우스크롤바가 생김 */
+#todo__list li {
+  display: flex;
+  align-items: center;
+}
+
+#todo__list span {
+  color: var(--color-grey);
+  font-size: var(--font-micro);
 }
 
 .todo__delete-btn {
