@@ -17,7 +17,7 @@
 
   /* Font size */
   --font-large: 144px;
-  --font-medium: 64px;
+  --font-medium: 48px;
   --font-regular: 32px;
   --font-small: 20px;
   --font-micro: 16px;
@@ -166,6 +166,27 @@ p {
   font-weight: 700;
 }
 
+#greeting__container {
+  text-align: center;
+  margin: auto;
+  width: 40%;
+}
+
+#login__form input,
+#todo__form input {
+  padding: 0;
+  border: none;
+  border-bottom: solid white;
+  color: var(--color-white);
+  caret-color: var(--color-white);
+  background: transparent;
+  font-weight: 500;
+  line-height: normal;
+  outline: none;
+  text-align: center;
+  font-size: var(--font-medium);
+}
+
 #greeting__container #login__form {
   padding: 20px;
   /*input이랑 button을 가운데로 모이게 정렬*/
@@ -175,25 +196,12 @@ p {
 }
 
 #greeting__container #login__form input {
-  background-color: #31343e;
-  border: 1px solid #31343e;
-  border-radius: 4px;
-  color: silver;
   display: block;
-  font-size: inherit;
   height: 50px;
   width: 100%;
   text-align: center;
 }
 
-#greeting__container #login__form input::placeholder {
-  /* 기본 상태에서 input 안의 글자 색상 */
-  color: red;
-}
-#greeting__container #login__form input:focus::placeholder {
-  /* input 커서 활성화 상태에서 input 안의 글자 색상 */
-  color: gray;
-}
 #greeting__container #greeting {
   text-align: center;
 }
