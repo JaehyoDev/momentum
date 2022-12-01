@@ -41,8 +41,8 @@ const quotes = [
   },
 ];
 
-const quote = document.querySelector("#quote span:first-child");
-const author = document.querySelector("#quote span:last-child");
+const quote = document.querySelector("#quote h3:first-child");
+const author = document.querySelector("#quote h3:last-child");
 
 // 반올림 Math.round
 // 올림 Math.ceil

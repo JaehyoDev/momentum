@@ -32,7 +32,7 @@
   --size-border-radius: 8px;
 
   /* Annimation */
-  --animation-duration: 300ms;
+  --animation-duration: 100ms;
 }
 
 /* Universal tags */
@@ -60,6 +60,10 @@ body {
 
 .hidden {
   display: none !important;
+}
+
+.transparent {
+  opacity: 0;
 }
 
 a {
@@ -213,9 +217,16 @@ p {
 }
 
 #quote__container {
-  display: flex;
-  justify-content: center;
+  margin: auto;
+  position: absolute;
+  bottom: 20px;
   padding: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#quote h3 {
+  display: inline;
 }
 
 #todo__Btn {
@@ -236,7 +247,9 @@ p {
   width: 300px;
   margin-bottom: 10px;
   height: auto;
+  transition: all var(--animation-duration) ease-in;
 }
+
 #todo__list {
   position: relative;
   width: 100%;
@@ -248,6 +261,7 @@ p {
 #todo__list li {
   display: flex;
   align-items: center;
+  margin: 10px 0px;
 }
 
 #todo__list span {

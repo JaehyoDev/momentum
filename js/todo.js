@@ -3,7 +3,7 @@ const todoBtn = document.getElementById("todo__Btn");
 const todoForm = document.getElementById("todo__form");
 const todoInput = document.querySelector("#todo__form input");
 const todoList = document.getElementById("todo__list");
-
+const TRANSPARENT_CLASSNAME = "transparent";
 const TODOS_KEY = "todos";
 
 let todos = [];
@@ -65,5 +65,5 @@ if (savedTodos !== null) {
 }
 
 todoBtn.addEventListener("click", () =>
-  todoContainer.classList.toggle(HIDDEN_CLASSNAME)
+  todoContainer.classList.toggle(TRANSPARENT_CLASSNAME)
 );
