@@ -3,6 +3,7 @@ const loginForm = document.querySelector("#login__form");
 const loginInput = document.querySelector("#login__form input");
 //const loginButton = document.querySelector("#login-form button");
 const greeting = document.querySelector("#greeting");
+const logoutBtn = document.querySelector("#logout__btn");
 
 // 닉네임이 설정되어있거나 설정된다면 todo폼 컨테이너를 보여줘야하니 todo폼 컨테이너 변수 설정
 const todoFormContainer = document.querySelector("#todo__form__container");
@@ -41,14 +42,44 @@ function onLoginSubmit(event) {
   // 2번 `은 백틱이라고 불림
   //greeting.innerText = `Hello ${username}`;
   paintGreetings(username);
+  // show logout button
+  logoutBtn.addEventListener("click", test);
+  logoutBtn.classList.remove(HIDDEN_CLASSNAME);
+  // show the todo form container
+  todoFormContainer.classList.remove(HIDDEN_CLASSNAME);
 }
 
 function paintGreetings(username) {
   loginMessage.classList.add(HIDDEN_CLASSNAME);
   greeting.innerText = `Hello, ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  // show the todo form container
-  todoFormContainer.classList.remove(HIDDEN_CLASSNAME);
+}
+
+// 로그아웃하면 모든 정보를 지운다.
+function test() {
+  if (
+    !confirm(
+      "로그아웃하면 모든 정보가 삭제됩니다. '확인'을 누르면 로그아웃됩니다."
+    )
+  ) {
+    // 취소(아니오) 버튼 클릭 시 이벤트
+  } else {
+    // 확인(예) 버튼 클릭 시 이벤트
+    localStorage.removeItem(USERNAME_KEY);
+    loginMessage.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    // Do not show logout button
+    logoutBtn.classList.add(HIDDEN_CLASSNAME);
+    // Make login form empty
+    loginInput.value = "";
+    greeting.classList.add(HIDDEN_CLASSNAME);
+    todoFormContainer.classList.add(HIDDEN_CLASSNAME);
+    // Delete todo list
+    localStorage.removeItem(TODOS_KEY);
+    while (todoList.hasChildNodes()) {
+      todoList.removeChild(todoList.firstChild);
+    }
+  }
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
@@ -58,8 +89,12 @@ if (savedUsername === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoginSubmit);
 } else {
+  console.dir(logoutBtn);
   // show the greetings
   paintGreetings(savedUsername);
+  // show logout button
+  logoutBtn.addEventListener("click", test);
+  logoutBtn.classList.remove(HIDDEN_CLASSNAME);
   // show the todo form container
   todoFormContainer.classList.remove(HIDDEN_CLASSNAME);
 }
