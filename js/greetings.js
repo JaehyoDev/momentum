@@ -7,6 +7,7 @@ const logoutBtn = document.querySelector("#logout__btn");
 
 // 닉네임이 설정되어있거나 설정된다면 todo폼 컨테이너를 보여줘야하니 todo폼 컨테이너 변수 설정
 const todoFormContainer = document.querySelector("#todo__form__container");
+const todoBtnForLog = document.getElementById("todo__btn");
 
 // 일반적으로 string으로만 포함된 변수는 대문자로 표기
 // 그리고 중요한 정보를 담은게 아니라서 대문자로 표기
@@ -43,10 +44,11 @@ function onLoginSubmit(event) {
   //greeting.innerText = `Hello ${username}`;
   paintGreetings(username);
   // show logout button
-  logoutBtn.addEventListener("click", test);
+  logoutBtn.addEventListener("click", logout);
   logoutBtn.classList.remove(HIDDEN_CLASSNAME);
   // show the todo form container
   todoFormContainer.classList.remove(HIDDEN_CLASSNAME);
+  todoBtnForLog.classList.remove(HIDDEN_CLASSNAME);
 }
 
 function paintGreetings(username) {
@@ -56,7 +58,7 @@ function paintGreetings(username) {
 }
 
 // 로그아웃하면 모든 정보를 지운다.
-function test() {
+function logout() {
   if (
     !confirm(
       "로그아웃하면 모든 정보가 삭제됩니다. '확인'을 누르면 로그아웃됩니다."
@@ -74,6 +76,7 @@ function test() {
     loginInput.value = "";
     greeting.classList.add(HIDDEN_CLASSNAME);
     todoFormContainer.classList.add(HIDDEN_CLASSNAME);
+    todoBtnForLog.classList.add(HIDDEN_CLASSNAME);
     // Delete todo list
     localStorage.removeItem(TODOS_KEY);
     while (todoList.hasChildNodes()) {
@@ -89,12 +92,13 @@ if (savedUsername === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoginSubmit);
 } else {
-  console.dir(logoutBtn);
   // show the greetings
   paintGreetings(savedUsername);
   // show logout button
-  logoutBtn.addEventListener("click", test);
+  logoutBtn.addEventListener("click", logout);
   logoutBtn.classList.remove(HIDDEN_CLASSNAME);
   // show the todo form container
   todoFormContainer.classList.remove(HIDDEN_CLASSNAME);
+  // show todo button
+  todoBtnForLog.classList.remove(HIDDEN_CLASSNAME);
 }
