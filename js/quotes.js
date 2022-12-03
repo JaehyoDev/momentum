@@ -1,48 +1,53 @@
 const quotes = [
   {
-    quote: "a",
-    author: "a author",
+    quote: "The way to get started is to quit talking and begin doing.",
+    author: "Walt Disney",
   },
   {
-    quote: "b",
-    author: "b author",
+    quote:
+      "Success is walking form failure to failure with no loss of enthusiasm.",
+    author: "Winston Churchill",
   },
   {
-    quote: "c",
-    author: "c author",
+    quote: "Imagination is more important than knowledge.",
+    author: "Albert Einstein",
   },
   {
-    quote: "d",
-    author: "d author",
+    quote: "I don't dream at night. I dream at day. I dream for a living.",
+    author: "Steven Spielberg",
   },
   {
-    quote: "e",
-    author: "e author",
+    quote:
+      "Genius is one percent inspiration and ninety-nie percent perspiration.",
+    author: "Thomas Edison",
   },
   {
-    quote: "f",
-    author: "f author",
+    quote: "I want to put a ding in the universe.",
+    author: "Steve Jobs",
   },
   {
-    quote: "g",
-    author: "g author",
+    quote: "Patience is bitter, but its fruit is sweet.",
+    author: "Aristotle",
   },
   {
-    quote: "h",
-    author: "h author",
+    quote:
+      "If you run you stand a chance of losing, but if you don't run you've already lost.",
+    author: "Barack Obama",
   },
   {
-    quote: "i",
-    author: "i author",
+    quote:
+      "They always say time changes things, but you actually have to change them yourself.",
+    author: "Andy Warhol",
   },
   {
-    quote: "j",
-    author: "j author",
+    quote:
+      "The secret of change is to focus all of your energy, not on fighting the old, but on building the new.",
+    author: "Socrates",
   },
 ];
 
-const quote = document.querySelector("#quote h3:first-child");
-const author = document.querySelector("#quote h3:last-child");
+const quote = document.querySelector("#quote__content");
+const author = document.querySelector("#quote__author");
 
 // 반올림 Math.round
 // 올림 Math.ceil

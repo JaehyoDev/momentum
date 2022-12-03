@@ -7,7 +7,7 @@
   --color-dark-white: #bdbdbd;
   --color-pink: #fe918d;
   --color-dark-pink: #ff6863;
-  --color-black: #4d4d4d;
+  --color-light-black: #4d4d4d;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
@@ -219,14 +219,16 @@ p {
 #quote__container {
   margin: auto;
   position: absolute;
-  bottom: 20px;
-  padding: 20px;
+  bottom: 40px;
+  padding: 10px;
   left: 50%;
   transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-#quote h3 {
-  display: inline;
+#quote__content,
+#quote__author {
+  text-align: center;
 }
 
 #todo__Btn {
