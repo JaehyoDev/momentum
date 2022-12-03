@@ -4,6 +4,9 @@ const loginInput = document.querySelector("#login__form input");
 //const loginButton = document.querySelector("#login-form button");
 const greeting = document.querySelector("#greeting");
 
+// 닉네임이 설정되어있거나 설정된다면 todo폼 컨테이너를 보여줘야하니 todo폼 컨테이너 변수 설정
+const todoFormContainer = document.querySelector("#todo__form__container");
+
 // 일반적으로 string으로만 포함된 변수는 대문자로 표기
 // 그리고 중요한 정보를 담은게 아니라서 대문자로 표기
 const HIDDEN_CLASSNAME = "hidden";
@@ -40,20 +43,15 @@ function onLoginSubmit(event) {
   paintGreetings(username);
 }
 
-/*
-function handleLinkClick(event) {
-  event.preventDefault();
-  console.dir(event);
-}
-*/
 function paintGreetings(username) {
   loginMessage.classList.add(HIDDEN_CLASSNAME);
   greeting.innerText = `Hello, ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
+  // show the todo form container
+  todoFormContainer.classList.remove(HIDDEN_CLASSNAME);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
-//link.addEventListener("click", handleLinkClick);
 
 if (savedUsername === null) {
   // show the form
@@ -62,4 +60,6 @@ if (savedUsername === null) {
 } else {
   // show the greetings
   paintGreetings(savedUsername);
+  // show the todo form container
+  todoFormContainer.classList.remove(HIDDEN_CLASSNAME);
 }

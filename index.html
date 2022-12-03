@@ -31,17 +31,18 @@
         <form id="login__form" class="hidden">
           <input
             required
-            maxlength="15"
+            maxlength="24"
             type="text"
           />
         </form>
         <h2 id="greeting" class="hidden"></h2>
       </div>
 
-      <div id="todo__form__container">
+      <div id="todo__form__container" class="hidden">
         <form id="todo__form">
           <input
             required
+            maxlength="24"
             type="text"
             placeholder="Write a To Do and Press Enter"
           />
@@ -52,11 +53,13 @@
         <div id="quote__content"></div>
         <div id="quote__author"></div>
       </div>
-      <div id="todo__container">
+
+      <div id="todo__list__container">
         <ul id="todo__list"></ul>
       </div>
-      <button id="todo__Btn">Todo</button>
+      <button id="todo__btn">Todo</button>
     </div>
+
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>

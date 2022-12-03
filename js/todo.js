@@ -1,10 +1,11 @@
-const todoContainer = document.getElementById("todo__container");
-const todoBtn = document.getElementById("todo__Btn");
+const todoListContainer = document.getElementById("todo__list__container");
+const todoBtn = document.getElementById("todo__btn");
 const todoForm = document.getElementById("todo__form");
 const todoInput = document.querySelector("#todo__form input");
 const todoList = document.getElementById("todo__list");
 const TRANSPARENT_CLASSNAME = "transparent";
 const TODOS_KEY = "todos";
+const todoMax = 15;
 
 let todos = [];
 
@@ -37,10 +38,19 @@ function paintTodo(newTodo) {
   li.appendChild(span);
   li.appendChild(button);
   todoList.appendChild(li);
+
+  if (todoListContainer.classList.contains(TRANSPARENT_CLASSNAME)) {
+    todoListContainer.classList.toggle(TRANSPARENT_CLASSNAME);
+  }
 }
 
 function handleTodoSubmit(event) {
   event.preventDefault();
+
+  if (todos.length >= todoMax) {
+    return;
+  }
+
   const newTodo = todoInput.value;
   todoInput.value = "";
   const newTodoObj = {
@@ -65,5 +75,5 @@ if (savedTodos !== null) {
 }
 
 todoBtn.addEventListener("click", () =>
-  todoContainer.classList.toggle(TRANSPARENT_CLASSNAME)
+  todoListContainer.classList.toggle(TRANSPARENT_CLASSNAME)
 );
